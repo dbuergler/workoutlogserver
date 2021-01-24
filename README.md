@@ -1,7 +1,0 @@
-![](WorkoutLogCreate.PNG)
-![](WorkoutLogDelete.PNG)
-![](WorkoutLogGetAllLogsByUser.PNG)
-![](WorkoutLogGetLogsById.PNG)
-![](WorkoutLogPUT.PNG)
-![](WorkoutLogUserLogin.PNG)
-![](WorkoutLogUserRegister.PNG)
