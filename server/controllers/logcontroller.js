@@ -4,11 +4,8 @@ const validateSession = require('../middleware/validate-session');
 var sequelize = require('../db');
 const Log = sequelize.import('../models/log');
 
-//router.get('/practice', validateSession, function (req, res){
-    //res.send('Hey! This is a practice route!')
-//})
 
-router.post('/create', validateSession, (req, res) => {
+router.post('/', validateSession, (req, res) => {
     const logEntry = {
         description: req.body.log.description,
         definition: req.body.log.definition,
@@ -54,7 +51,7 @@ router.put('/:id', validateSession, (req, res) => {
   });
 
 
-  router.delete('/delete/:id', validateSession, function(req, res) {
+  router.delete('/:id', validateSession, function(req, res) {
       const query = { where: {id: req.params.id}};
 
       Log.destroy(query)
