@@ -38,26 +38,26 @@ router.get('/:id', validateSession, (req, res) => {
 
 router.put('/:id', validateSession, (req, res) => {
     const updateLogEntry = {
-      description: req.body.log.description,
-      definition: req.body.log.definition,
-      result: req.body.log.result,
-      owner_id: req.user.id,
+    description: req.body.log.description,
+    definition: req.body.log.definition,
+    result: req.body.log.result,
+    owner_id: req.user.id,
     };
     const query = { where: { id: req.params.id } };
 
     Log.update(updateLogEntry, query)
-      .then((logs) => res.status(200).json(logs))
-      .catch((err) => res.status(500).json({ error: err }));
-  });
+    .then((logs) => res.status(200).json(logs))
+    .catch((err) => res.status(500).json({ error: err }));
+});
 
 
-  router.delete('/:id', validateSession, function(req, res) {
-      const query = { where: {id: req.params.id}};
+router.delete('/:id', validateSession, function(req, res) { 
+    const query = { where: {id: req.params.id}};
 
-      Log.destroy(query)
-      .then(() => res.status(200).json({message: "Log Entry Removed"}))
-      .catch((err) => res.status(500).json({ error: err}));
-  });
+Log.destroy(query)
+.then(() => res.status(200).json({message: "Log Entry Removed"}))
+.catch((err) => res.status(500).json({ error: err}));
+});
 
-  
+
 module.exports = router;
