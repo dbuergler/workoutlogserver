@@ -3,6 +3,7 @@ let express = require('express');
 let app = express();
 let log = require('./controllers/logcontroller');
 let user = require('./controllers/userlogcontroller');
+let userinfo = require('./controllers/userinfocontroller');
 let sequelize = require('./db');
 
 
@@ -12,6 +13,7 @@ app.use(express.json());
 
 app.use('/log', log);
 app.use('/user', user);
+app.use('/userinfo', userinfo)
 
 
 

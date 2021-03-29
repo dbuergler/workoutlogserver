@@ -4,6 +4,9 @@ import WorkoutCreate from './WorkoutCreate';
 import WorkoutTable from './WorkoutTable';
 import WorkoutEdit from './WorkoutEdit';
 
+
+
+
 const WorkoutIndex = (props) => {
     const [workouts, setWorkouts] = useState([]);
     const [updateActive, setUpdateActive] = useState(false);
@@ -20,8 +23,8 @@ const WorkoutIndex = (props) => {
         .then((logData) => {
                 setWorkouts(logData)
                 console.log(logData);
-            })
-    }
+        })
+}
 
     const editUpdateWorkout = (workout) => {
         setWorkoutToUpdate(workout);
@@ -41,13 +44,13 @@ useEffect(() => {
 }, [])
 
 
-    return (
-        <Container>
-            <Row>
-                <Col md="3">
+return (
+    <Container>
+        <Row>
+        <Col md="3">
                 <WorkoutCreate fetchWorkouts={fetchWorkouts} token={props.token}/>
-                </Col>
-                <Col md="9">
+            </Col>
+            <Col md="9">
                 <WorkoutTable workouts={workouts} editUpdateWorkout={editUpdateWorkout} updateOn={updateOn} fetchWorkouts={fetchWorkouts} token={props.token}/>
                 </Col>
                 {updateActive ? <WorkoutEdit workoutToUpdate={workoutToUpdate} updateOff={updateOff} token={props.token} fetchWorkouts={fetchWorkouts}/> : <></>}
@@ -57,4 +60,47 @@ useEffect(() => {
 }
 
 export default WorkoutIndex;
+
+
+
+
+
+
+
+
+// export default props => (
+//     <AuthContext.Consumer>
+//         {auth => <WorkoutIndex {...props} auth={auth} />}
+//     </AuthContext.Consumer>
+// );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

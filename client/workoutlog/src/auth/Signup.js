@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import{Form, FormGroup, Label, Input, Button} from 'reactstrap';
+
 
 
 const Signup = (props) => {
@@ -39,3 +40,47 @@ return (
 }
 
 export default Signup;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

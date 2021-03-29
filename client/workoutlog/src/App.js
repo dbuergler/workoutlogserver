@@ -4,6 +4,8 @@ import Auth from './auth/Auth';
 import WorkoutIndex from './workouts/WorkoutIndex';
 
 
+
+
 function App() {
   const [sessionToken, setSessionToken] = useState('');
   
@@ -38,5 +40,10 @@ function App() {
 }
 
 
-
 export default App;
+
+
+
+
+
+

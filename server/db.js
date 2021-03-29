@@ -13,4 +13,15 @@ sequelize.authenticate().then(
     }
 );
 
+User = sequelize.import('./models/user');
+Logs = sequelize.import('./models/log');
+UserInfo = sequelize.import('./models/userinfo')
+
+Logs.belongsTo(User);
+User.hasMany(Logs)
+
+User.hasOne(UserInfo);
+UserInfo.belongsTo(User);
+
+
 module.exports = sequelize;
